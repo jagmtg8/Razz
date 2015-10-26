@@ -8,14 +8,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="github2b2b.razz.ContinueOrFinish">
+    tools:context="github2b2b.razzmatazz.continueOrFinish">
 
     <Button
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:text="Add Another Item"
         android:id="@+id/button2"
-        android:layout_above="@+id/btnCheckout"
+        android:layout_above="@+id/btnFinish"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="onClickAddMore"/>
@@ -23,8 +23,8 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:text="Checkout"
-        android:id="@+id/btnCheckout"
+        android:text="Finish"
+        android:id="@+id/btnFinish"
         android:onClick="toExitScreen"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/button2"

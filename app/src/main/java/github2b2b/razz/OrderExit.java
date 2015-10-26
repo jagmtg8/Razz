@@ -13,10 +13,10 @@ public class OrderExit extends AppCompatActivity {
         //TODO: Add a picture of someone or something funny here. jhdkfjhaskdf
         Log.i("TEST", "test");
 
-
-
-
-        //hi please let me push
+        //checkout and go back to first screen
+        Cart.checkOut();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override

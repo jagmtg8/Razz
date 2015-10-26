@@ -1,5 +1,6 @@
 package github2b2b.razz;
 
+
 import java.util.ArrayList;
 import java.util.Currency;
 
@@ -23,7 +24,12 @@ public class Cart {
 
     public static void checkOut(){
         //TODO: Display order on screen. Send order. Print recipt
-        //Wipe Cart, and Sandwich. Increment Order Number and return to main menu. ??Write order to log??
+        //Wipe Cart, and Sandwich. Increment Order Number. ??Write order to log??
+
+        chosenItems.clear();
+        itemsInCart = 0;
+        orderNum++;
+
     }
 
     public static void addIngredToCur(Ingredient ingred){
