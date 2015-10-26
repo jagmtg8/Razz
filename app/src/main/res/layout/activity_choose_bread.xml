@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="github2b2b.razz.ChooseBread"
+android:onClick="breadClick">
+
+
+    <Button
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:text="Quit"
+    android:paddingTop="25dp"
+    android:paddingBottom="25dp"
+    android:id="@+id/button4"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:onClick="exitToStart"
+    android:gravity="center_vertical|center_horizontal"/>
+
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ToggleButton
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:text="Sub Roll"
+                android:id="@+id/btnSub"
+                android:padding="25dp"
+                android:textSize="15dp"
+                android:onClick="breadClick"
+                android:checked="false"
+                android:textOff="Sub Roll"
+                android:textOn="Sub Roll"
+                android:tag="0"
+                />
+
+            <ToggleButton
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:text="Deli Roll"
+                android:id="@+id/btnRoll"
+                android:layout_column="1"
+                android:padding="25dp"
+                android:textSize="15dp"
+                android:onClick="breadClick"
+                android:checked="false"
+                android:textOff="Deli Roll"
+                android:textOn="Deli Roll"
+                android:tag="1"/>
+
+            <ToggleButton
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:text="White Bread"
+                android:id="@+id/btnWhiteBread"
+                android:layout_column="2"
+                android:padding="25dp"
+                android:textSize="15dp"
+                android:onClick="breadClick"
+                android:checked="false"
+                android:textOff="White Bread"
+                android:textOn="White Bread"
+                android:tag="2"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:text="Wheat Bread"
+                android:id="@+id/btnWheatBread"
+                android:padding="25dp"
+                android:textSize="15dp"
+                android:onClick="breadClick"
+                android:checked="false"
+                android:textOff="Wheat Bread"
+                android:textOn="Wheat Bread"
+                android:tag="3"/>
+
+            <ToggleButton
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:text="Wrap"
+                android:id="@+id/btnWrap"
+                android:layout_column="1"
+                android:padding="25dp"
+                android:textSize="15dp"
+                android:onClick="breadClick"
+                android:checked="false"
+                android:textOff="Wrap"
+                android:textOn="Wrap"
+                android:tag="4"/>
+
+            <ToggleButton
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:text="Wheat Wrap"
+                android:id="@+id/btnWheatWrap"
+                android:layout_column="2"
+                android:padding="25dp"
+                android:textSize="15dp"
+                android:onClick="breadClick"
+                android:checked="false"
+                android:textOff="Wheat Wrap"
+                android:textOn="Wheat Wrap"
+                android:tag="5"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>
+
+
+</RelativeLayout>
+

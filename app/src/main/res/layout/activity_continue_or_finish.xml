@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="github2b2b.razz.ContinueOrFinish">
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:text="Add Another Item"
+        android:id="@+id/button2"
+        android:layout_above="@+id/btnCheckout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickAddMore"/>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:text="Checkout"
+        android:id="@+id/btnCheckout"
+        android:onClick="toExitScreen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"/>
+
+    <ListView
+        android:layout_width="410dp"
+        android:layout_height="300dp"
+        android:id="@+id/lvDisplayCart"
+        android:textSize="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textVCartList"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tap on an item to remove it from your cart."
+        android:id="@+id/textVCartList"
+        android:textSize="21dp"
+        android:textColor="#000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+</RelativeLayout>

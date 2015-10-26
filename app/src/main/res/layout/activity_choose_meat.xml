@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="github2b2b.razz.ChooseMeat">
+
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Next: Cheese"
+        android:id="@+id/button"
+        android:paddingTop="25dp"
+        android:paddingBottom="15dp"
+        android:layout_above="@+id/button3"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignStart="@+id/button3"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="12dp"
+        android:onClick="nextPage"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Back"
+        android:id="@+id/button3"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:layout_above="@+id/button4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="12dp"
+        android:onClick="backToPrev"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Quit"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:id="@+id/button4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="exitToStart"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="12dp"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignParentTop="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Chicken"
+                    android:id="@+id/btnChicken"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Chicken"
+                    android:textOn="Chicken"
+                    android:tag="0"/>
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Turkey"
+                    android:id="@+id/btnTurkey"
+                    android:layout_column="1"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Turkey"
+                    android:textOn="Turkey"
+                    android:tag="1"/>
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Ham"
+                    android:id="@+id/btnHam"
+                    android:layout_column="2"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Ham"
+                    android:textOn="Ham"
+                    android:tag="2"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Honey Ham"
+                    android:id="@+id/btnHoneyHam"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Honey Ham"
+                    android:textOn="Honey Ham"
+                    android:tag="3"/>
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Pastrami"
+                    android:id="@+id/btnPastrami"
+                    android:layout_column="1"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Pastrami"
+                    android:textOn="Pastrami"
+                    android:tag="4"/>
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Salami"
+                    android:id="@+id/btnSalami"
+                    android:layout_column="2"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Salami"
+                    android:textOn="Salami"
+                    android:tag="5"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Roast Beef"
+                    android:id="@+id/btnRoastBeef"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Roast Beef"
+                    android:textOn="Roast Beef"
+                    android:tag="6"/>
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Pepperoni"
+                    android:id="@+id/btnPepperoni"
+                    android:layout_column="1"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Pepperoni"
+                    android:textOn="Pepperoni"
+                    android:tag="7"/>
+
+                <ToggleButton
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:text="Bologna"
+                    android:id="@+id/btnBologna"
+                    android:layout_column="2"
+                    android:padding="25dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickMeat"
+                    android:checked="false"
+                    android:textOff="Bologna"
+                    android:textOn="Bologna"
+                    android:tag="8"/>
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
