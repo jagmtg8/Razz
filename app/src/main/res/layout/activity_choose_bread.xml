@@ -15,11 +15,11 @@ android:onClick="breadClick">
     android:paddingTop="25dp"
     android:paddingBottom="25dp"
     android:id="@+id/button4"
+    android:onClick="exitToStart"
+    android:gravity="center_vertical|center_horizontal"
     android:layout_alignParentBottom="true"
     android:layout_alignParentRight="true"
-    android:layout_alignParentEnd="true"
-    android:onClick="exitToStart"
-    android:gravity="center_vertical|center_horizontal"/>
+    android:layout_alignParentEnd="true"/>
 
 <ScrollView
     android:layout_width="wrap_content"
