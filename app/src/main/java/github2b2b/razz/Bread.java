@@ -8,13 +8,21 @@ import java.util.Currency;
 public class Bread extends Ingredient{
 
 
-
+    /**@author Shane Demskie 10/04
+     * @param ingredientName
+     * @param preIncluded
+     * @param extraCost
+     */
     Bread(String ingredientName, boolean preIncluded, Currency extraCost){
         this.ingredientName = ingredientName;
         this.preIncluded = preIncluded;
         this.extraCost = extraCost;
     }
 
+    /**
+     *
+     * @param ingredientName - A string which describes the ingredient
+     */
     Bread(String ingredientName){
         this.ingredientName = ingredientName;
     }

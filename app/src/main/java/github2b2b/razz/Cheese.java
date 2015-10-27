@@ -12,7 +12,10 @@ public class Cheese extends Ingredient{
         this.preIncluded = preIncluded;
         this.extraCost = extraCost;
     }
-
+    /**@author Shane Demskie 10/04
+     *
+     * @param ingredientName - A string which describes the ingredient
+     */
     Cheese(String ingredientName){
         this.ingredientName = ingredientName;
     }

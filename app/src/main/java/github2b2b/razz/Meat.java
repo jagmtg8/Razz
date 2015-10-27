@@ -14,7 +14,10 @@ public class Meat extends Ingredient{
 
 
     }
-
+    /**@author Shane Demskie 10/04
+     *
+     * @param ingredientName - A string which describes the ingredient
+     */
     Meat(String ingredientName){
         this.ingredientName = ingredientName;
     }

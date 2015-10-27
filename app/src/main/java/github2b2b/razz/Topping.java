@@ -14,7 +14,10 @@ public class Topping extends Ingredient{
 
 
     }
-
+    /**@author Shane Demskie 10/04
+     *
+     * @param ingredientName - A string which describes the ingredient
+     */
     Topping(String ingredientName){
         this.ingredientName = ingredientName;
     }

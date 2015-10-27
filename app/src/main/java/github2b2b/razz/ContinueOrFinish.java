@@ -12,7 +12,9 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+/**
+ * Created by Katipo on 10/4/2015.
+ */
 public class ContinueOrFinish extends AppCompatActivity {
 
     private ListView lv;                //declare listview object to populate listview

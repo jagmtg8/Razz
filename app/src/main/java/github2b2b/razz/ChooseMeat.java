@@ -10,54 +10,68 @@ import android.widget.ToggleButton;
 public class ChooseMeat extends AppCompatActivity {
 
 
-    //When a button is clicked...
+
+    /** @author -  Shane Demskie, 10/09
+     * When a view is passed  ( when clicked ), we get the tag of the object ( an integer ) which
+     * corresponds to the location in the ingredientManager list and instantiate the matching
+     * locations object. We then check if the toggleButton is clicked for the view passed in, if it
+     * is not, we add the ingredient to the current sandwich, if it is, we remove the item.
+     *
+     * @param v - Takes in a view as a parameter.
+     */
     public void onClickMeat(View v){
 
-        int num = Cart.itemsInCart;
-        int numOfItemsInCart = num-1;                                           //-1 to access the arraylist location of the object in reference
-//        System.out.println("Total # items currently added to cart: XXX = " + num);        //DEBUG
-
-        int curMeatTag = Integer.parseInt(v.getTag().toString());             //Look at the tag of the item and find the corresponding tag in ingredient manager. **Ask Shane
-        Meat curMeat = IngredientManager.meatList.get(curMeatTag);            //Create object
+        int curMeatTag = Integer.parseInt(v.getTag().toString());                                   //Look at the tag of the item and find the corresponding tag in ingredient manager. **Ask Shane
+        Meat curMeat = IngredientManager.meatList.get(curMeatTag);                                  //Create object
 
         if(((ToggleButton) v).isChecked()){
             //on
-            Cart.addIngredToCur(curMeat);
-//            for(int i = 0; i < Cart.chosenItems.get(numOfItemsInCart).ingredientList.size(); i++){
-//                Log.i("LOG X", Cart.chosenItems.get(numOfItemsInCart).ingredientList.get(i).getIngredientName());                                               //Print contents of current sandwich ** DEBUG
-//            }
-
+            Cart.addIngredToCur(curMeat);                                                           //Add current ingredient (Button is highlighted)
         }else{
             //off
-            Cart.removeIngredFromCur(curMeat);                                                              //Remove current ingredient (Button is not highlighted anymore)
-//            for(int i = 0; i < Cart.chosenItems.get(numOfItemsInCart).ingredientList.size(); i++){
-//                Log.i("LOG X", Cart.chosenItems.get(numOfItemsInCart).ingredientList.get(i).getIngredientName());                                               //Print contents of current sandwich ** DEBUG
-//            }                                                                                            //Print contents of current sandwich ** Debug
+            Cart.removeIngredFromCur(curMeat);                                                      //Remove current ingredient (Button is not highlighted anymore)
+
         }
 
     }
 
-    //Advance to next page
+    /** @author -  Shane Demskie, 10/09
+     * When a view is passed  ( when clicked ), we proceed to the next activity ( ChooseCheese )
+     * using intent
+     *
+     * @param v - Takes in a view as a parameter.
+     */
     public void nextPage(View v){
 
         Intent intent = new Intent(this, ChooseCheese.class);
         startActivity(intent);
     }
 
-    //Return to Previous page
+    /** @author -  Shane Demskie, 10/09
+     * When a view is passed  ( when clicked ), we remove all ingredients from the current sandwich,
+     * decrement items in cart and revert to the last activity.
+     *
+     * @param v - Takes in a view as a parameter.
+     */
     public void backToPrev(View v){
 
-        Cart.chosenItems.get(Cart.itemsInCart-1).removeAllIngredients();                    //wipe all ingredients.
-        Log.i("Log itemincart X", String.valueOf(Cart.itemsInCart));                        //print # of ingred in cart
+        Cart.chosenItems.get(Cart.itemsInCart-1).removeAllIngredients();                            //wipe all ingredients.
+        Log.i("Log itemincart X", String.valueOf(Cart.itemsInCart));                                //print # of ingred in cart
         Cart.itemsInCart = (Cart.itemsInCart-1);
-        Log.i("Log itemincart X", String.valueOf(Cart.itemsInCart));                        //print # of ingred in cart
+        Log.i("Log itemincart X", String.valueOf(Cart.itemsInCart));                                //print # of ingred in cart
         super.onBackPressed();
     }
 
 
-    //When the exit button is clicked, activity will go back to start screen.
+
+    /** @author -  Shane Demskie, 10/09
+     * When a view is passed  ( when clicked ), we call static method cancelOrder which wipes the
+     * Cart. We then return to the start screen using intent
+     *
+     * @param v - Takes in a view as a parameter.
+     */
     public void exitToStart(View v){
-        Cart.cancelOrder();                     //Clear the cart and the current sandwich if applicable
+        Cart.cancelOrder();                                                                         //Clear the cart and the current sandwich if applicable
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

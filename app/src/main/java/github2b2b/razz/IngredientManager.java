@@ -7,10 +7,26 @@ import java.util.ArrayList;
  */
 public class IngredientManager {
 
+    /**@author Shane Demskie 10/01
+     * @param breadList - Holds Bread types currently in inventory
+     * @param toppingList - Holds Toppings types currently in inventory
+     * @param cheeseList - Holds Cheeses types currently in inventory
+     * @param meatList - Holds meats types currently in inventory
+     */
     static ArrayList<Bread> breadList = new ArrayList<>();
     static ArrayList<Topping> toppingList = new ArrayList<>();
     static ArrayList<Cheese> cheeseList = new ArrayList<>();
     static ArrayList<Meat> meatList = new ArrayList<>();
+
+    /**
+     * Below Methods are used to full lists above
+     */
+    public static void fillALl(){
+        setBreadList();
+        setCheeseList();
+        setMeatList();
+        setToppingList();
+    }
 
     public static void setMeatList() {
         ArrayList<Meat> temp = new ArrayList<>();
@@ -29,7 +45,6 @@ public class IngredientManager {
     public static void setCheeseList() {
         ArrayList<Cheese> temp = new ArrayList<>();
         temp.add(new Cheese("American Cheese"));
-//        temp.add(new Cheese("White American Cheese"));            //Un comment this when we figure out spacing issue with buttons
         temp.add(new Cheese("Asiago Cheese"));
         temp.add(new Cheese("Cheddar Cheese"));
         temp.add(new Cheese("Mozerella Cheese"));
@@ -66,26 +81,17 @@ public class IngredientManager {
         IngredientManager.breadList = temp;
     }
 
-
-
-    public static void fillALl(){
-        setBreadList();
-        setCheeseList();
-        setMeatList();
-        setToppingList();
-    }
-
     public void addIngredient(Ingredient ingredient){
 
-        // Ingredient turkey = new Meat();
-        //we'd need a way to utilize this depending on how we're going to handle our menu; hard code or enter manually
+        //TODO - Ingredient turkey = new Meat();
+        //TODO - we'd need a way to utilize this depending on how we're going to handle our menu; hard code or enter manually
 
     }
 
     public void removeIngredient(Ingredient ingredient){
 
-        // Loop through the arraylist and search for the item entered. If it exists, remove, if not return flag
-        //we'd need a way to utilize this depending on how we're going to handle our menu; hard code or enter manually
+        // TODO - Loop through the arraylist and search for the item entered. If it exists, remove, if not return flag
+        // TODO - we'd need a way to utilize this depending on how we're going to handle our menu; hard code or enter manually
     }
 
 

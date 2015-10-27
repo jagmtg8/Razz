@@ -8,12 +8,14 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    /** @author -  Shane Demskie, 10/09
+     * When a view is passed  ( when clicked ), we continue to the next activity ( ChooseBread )
+     *
+     * @param v - Takes in a view as a parameter.
+     */
     public void startButtonClick(View v){
-
         Intent intent = new Intent(this, ChooseBread.class);
         startActivity(intent);
-
     }
 
     @Override
