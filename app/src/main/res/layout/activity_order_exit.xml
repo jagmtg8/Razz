@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="You have successfully placed an order"
+        android:text="You have successfully placed your order"
         android:id="@+id/textView3"
         android:textSize="30dp"
         android:layout_below="@+id/textView2"
