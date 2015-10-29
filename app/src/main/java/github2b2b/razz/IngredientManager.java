@@ -72,12 +72,12 @@ public class IngredientManager {
 
     public static void setBreadList() {
         ArrayList<Bread> temp = new ArrayList<>();
-        temp.add(new Bread("Sub Roll"));
-        temp.add(new Bread("Deli Roll"));
-        temp.add(new Bread("White Bread"));
-        temp.add(new Bread("Wheat Bread"));
-        temp.add(new Bread("Wrap"));
-        temp.add(new Bread("Wheat Wrap"));
+        temp.add(new Bread("Sub Roll", 7.50));
+        temp.add(new Bread("Deli Roll", 7.00));
+        temp.add(new Bread("White Bread", 6.50));
+        temp.add(new Bread("Wheat Bread", 6.50));
+        temp.add(new Bread("Wrap", 7.50));
+        temp.add(new Bread("Wheat Wrap", 8.50));
         IngredientManager.breadList = temp;
     }
 

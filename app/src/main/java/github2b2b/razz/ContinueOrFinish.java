@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,9 @@ import java.util.List;
 public class ContinueOrFinish extends AppCompatActivity {
 
     private ListView lv;                //declare listview object to populate listview
+    private TextView tp; //Declare TextView object to for Total Price
+
+    public double totalPrice = 0;
 
     public void toExitScreen(View v){
         Intent intent = new Intent(this, OrderExit.class);
@@ -44,7 +48,7 @@ public class ContinueOrFinish extends AppCompatActivity {
     public void populateListView(){
         lv = (ListView) findViewById(R.id.lvDisplayCart);                   //Create listview object and link it with listView in .xml
         final ArrayList<String> curString = new ArrayList<>();               //Array list full of string representations of all of Carts contents
-        for(int i =0; i < Cart.chosenItems.size(); i++) {                   //Loop through the Cart
+        for(int i = 0; i < Cart.chosenItems.size(); i++) {                   //Loop through the Cart
             ArrayList<Ingredient> curCartItem = Cart.chosenItems.get(i).ingredientList;     //fill tempArrayList with current itteration cart contents
             String sandwich = "";                                                           //String to hold contents of Cart item current on
 
@@ -55,7 +59,12 @@ public class ContinueOrFinish extends AppCompatActivity {
                     sandwich += ", " + curCartItem.get(j).getIngredientName();
                 }
             }
+            String itemPriceString = Cart.currencyFormat.format(Cart.chosenItems.get(i).itemPrice);  //Set the string itemPriceString to be the itemPrice, formatted as the US Dollar
+            sandwich += " - " + itemPriceString;    //Add this to the sandwich string
+
             curString.add(sandwich);                                                        //Add completed string to curString
+
+            totalPrice = totalPrice + Cart.chosenItems.get(i).itemPrice; //Add this price of the item to the totalPrice
         }
 
         final myOwnArrayAdapter adapter = new myOwnArrayAdapter(this,                                 //Put in your list of strings here
@@ -68,13 +77,19 @@ public class ContinueOrFinish extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String clickedField = (String) parent.getItemAtPosition(position);
-                view.animate().setDuration(1500).alpha(0)                                               //fade out animation
+                int toBeErasedIndex = curString.indexOf(clickedField);                          //get index of button clicked
+                totalPrice = totalPrice - Cart.chosenItems.get(toBeErasedIndex).itemPrice;  //Decrement the total price variable
+                String totalPriceString = Cart.currencyFormat.format(totalPrice);  //Set the totalPriceString to totalPrice formatted as US currency
+                tp = (TextView) findViewById(R.id.textPrice);  //Set tp to the text view textPrice
+                tp.setText(totalPriceString);  //Change the text view for
+
+                view.animate().setDuration(1000).alpha(0)                                               //fade out animation
                         .withEndAction(new Runnable() {
                             @Override
                             public void run() {
                                 int toBeErasedIndex = curString.indexOf(clickedField);                          //get index of button clicked
                                 Cart.chosenItems.remove(toBeErasedIndex);                               //remove that from the cart
-                                Cart.itemsInCart = (Cart.itemsInCart-1);                                //decrement itemsInCart counter
+                                Cart.itemsInCart = (Cart.itemsInCart - 1);                                //decrement itemsInCart counter
                                 curString.remove(clickedField);                                                 //Remove item clicked from display list
                                 adapter.notifyDataSetChanged();                                            //Tell list item was removed
                                 view.setAlpha(1);
@@ -84,7 +99,9 @@ public class ContinueOrFinish extends AppCompatActivity {
 
         });
 
-
+        String totalPriceString = Cart.currencyFormat.format(totalPrice);
+        tp = (TextView) findViewById(R.id.textPrice);
+        tp.setText(totalPriceString);
     }
 
     private class myOwnArrayAdapter extends ArrayAdapter<String> {

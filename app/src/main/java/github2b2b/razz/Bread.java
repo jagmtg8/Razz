@@ -13,20 +13,23 @@ public class Bread extends Ingredient{
      * @param preIncluded
      * @param extraCost
      */
-    Bread(String ingredientName, boolean preIncluded, Currency extraCost){
+    public double breadPrice;
+
+    Bread(String ingredientName, double breadPrice, boolean preIncluded, Currency extraCost){
         this.ingredientName = ingredientName;
         this.preIncluded = preIncluded;
         this.extraCost = extraCost;
+        this.breadPrice = breadPrice;
     }
 
     /**
      *
      * @param ingredientName - A string which describes the ingredient
      */
-    Bread(String ingredientName){
+    Bread(String ingredientName, double breadPrice){
         this.ingredientName = ingredientName;
+        this.breadPrice = breadPrice;
     }
-
 
 
 }

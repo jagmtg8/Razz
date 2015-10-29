@@ -26,6 +26,7 @@ public class ChooseBread extends AppCompatActivity {
 
         Sandwich sand = new Sandwich();      //create new bread object.
         sand.addIngredient(curBreadObj);     //set the bread type for the sandwich obj
+        sand.itemPrice = curBreadObj.breadPrice;  //Set the price of the item
 
         Cart.addSand(sand);      //add sandwich ** increment itemInCart counter done in Cart class**
 

@@ -13,7 +13,7 @@ public class MenuItem {
      * TODO Will be used when items other than sandwich are implemented. Sandwich will also extend from MenuItem
      */
     public String itemName;
-    public Currency itemPrice;
+    public double itemPrice;
     public Picture itemPicture;                 //Will we use picture buttons?
     public String itemDescription;              //Will we have a description? or just pre press buttons for certain sandwhiches
 

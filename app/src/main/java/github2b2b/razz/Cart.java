@@ -1,8 +1,10 @@
 package github2b2b.razz;
 
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Currency;
+import java.util.Locale;
 
 /**
  * Created by Katipo on 10/4/2015.
@@ -19,7 +21,7 @@ public class Cart {
     static ArrayList<Sandwich> chosenItems = new ArrayList<>();
     public static int itemsInCart = 0;
     static ArrayList<String> cartContentStringForm = new ArrayList<>();
-    public static Currency totalPrice;
+    public static NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
     public static int orderNum = 0;
 
     /**@author Shane Demskie 10/10
