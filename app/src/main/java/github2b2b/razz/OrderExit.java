@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class OrderExit extends AppCompatActivity
@@ -24,6 +25,16 @@ public class OrderExit extends AppCompatActivity
         startActivity(intent);
     }
 
+
+    public void incrementOrderNumber(){
+        TextView tv = (TextView) findViewById(R.id.textOrderNum);
+
+        tv.setText("Order Number: " + Cart.orderNum);
+
+
+    }
+
+
     /**
      * @author - John Sheehan 10/27
      * When this screen is created, it will automatically return to the Start screen after 7 seconds.
@@ -36,6 +47,9 @@ public class OrderExit extends AppCompatActivity
         setContentView(R.layout.activity_order_exit);
 
         Intent intent = getIntent();
+
+        incrementOrderNumber();
+
 
         new CountDownTimer(7000, 1000)
         {

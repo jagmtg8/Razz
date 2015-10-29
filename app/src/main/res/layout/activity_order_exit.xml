@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Order Number: 0"
+        android:text="Order Number: xxx"
         android:id="@+id/textOrderNum"
         android:textSize="20dp"
         android:layout_below="@+id/textView2"

@@ -3,7 +3,6 @@ package github2b2b.razz;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.Locale;
 
 /**
@@ -22,7 +21,7 @@ public class Cart {
     public static int itemsInCart = 0;
     static ArrayList<String> cartContentStringForm = new ArrayList<>();
     public static NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
-    public static int orderNum = 0;
+    public static int orderNum = 1;
 
     /**@author Shane Demskie 10/10
      * TO BE COMPLETED: Send order to other device and write to log (maybe?)
